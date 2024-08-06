@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_protect
 
 
 
