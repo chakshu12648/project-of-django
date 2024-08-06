@@ -1,0 +1,18 @@
+{%extends 'index.html' %}
+<h1> welcome to the login page</h1>
+<style>
+    h3{
+        color:red
+    }
+</style>
+{%for message in messages%}
+<h3>{{message}}</h3>
+{% endfor %}
+<form action="login" method="POST">
+    {% csrf_token %}
+    <p>enter the username</p>
+ <input type="text" name="username"/>
+    <p> enter the password</p>
+    <input type="password" name="password"/><br>
+    <input type="submit"/>
+</form>
