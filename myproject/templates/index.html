@@ -1,5 +1,36 @@
+<ui:include src="login.html" />
+{% csrf_token %}
 {%if user.is_authenticated%}
 <h1>hello,{{user.username}}</h1>
 {%else%}
 <h1> hello world</h1>
 {%endif%}
+{%if user.is_authenticated%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="custom-button">logout</button>
+</body>
+</html>
+{%else%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+    <link rel="stylesheet" href="login.">
+</head>
+<body>
+    <button class="custom-button"href="login.html">login</button>
+</body>
+</html>
+{%endif%}
+
+

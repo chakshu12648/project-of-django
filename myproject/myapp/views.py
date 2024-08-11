@@ -8,6 +8,11 @@ from django.views.decorators.csrf import csrf_protect
 
 
 # Create your views here.
+def post(request,pk):
+   return render(request,'post.html',{'pk':pk})
+def logout(request):
+   auth.logout(request)
+   return redirect('/')
 def login(request):
     # Your login view logic here
     print(request.POST)
@@ -54,6 +59,13 @@ def register(request):
    
    else:
       return render(request,'register.html')
+   
+
+def counter(request):
+   posts=['tim','tom','matt','steve',2,3]
+   return render(request,'counter.html',{'posts':posts})
+
+
 def index(request):
    
 
